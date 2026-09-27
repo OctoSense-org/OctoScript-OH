@@ -17,10 +17,10 @@ OctoSense 外壳、App Hub 的 `card-host`、Mail 以及其他 OctoSense 应用�
 用 `python3 tools/setup-native.py --check --cargo-manifest Cargo.toml`
 检查本地依赖图。现有的各平台渲染后端仍然属于各自的应用；框架负责的是共享的 VM 和 UI 源码。
 
-**已知差异：** 目前锁文件（以及对应的 Cargo 版本）选定的是 Octoscript-Makepad `b1596d9c`，
-它不在该仓库的 `main` 上；其他 OctoSense 使用方都在 `463e3da8`（makepad `cd812acd`）。
-在 [#67](https://github.com/OctoSense-org/OctoScript-OH/issues/67) 修复之前，请把本仓库放在单独的工作区里准备，不要和
-OctoScript-App-Design-Flow 的 checkout 放在一起。
+**运行时锁定（[#67](https://github.com/OctoSense-org/OctoScript-OH/issues/67) 已于 2026-09-26 修复）：** 锁文件和对应的 Cargo 版本现在选定
+Octoscript-Makepad `297ff0bb`，它在该仓库的 `main` 上（makepad `cd812acd`、Octoscript `68f6a9df`，
+与其他 OctoSense 使用方的框架源码相同）。之前锁定的 `b1596d9c` 是 main 上 `f4acc6c`
+在历史重写之前的哈希，迁移没有丢失任何内容。
 
 
 做一个鸿蒙应用：前端用网页，其余全部交给 Rust。
