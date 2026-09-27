@@ -20,6 +20,12 @@ Use `python3 tools/setup-native.py --check --cargo-manifest Cargo.toml`
 to check the local dependency graph. Existing platform rendering backends remain
 part of their applications; the framework controls the shared VM and UI sources.
 
+**Known gap:** the lock (and the matching Cargo revs) currently select
+Octoscript-Makepad `b1596d9c`, which is not on its `main`; the other OctoSense
+consumers are on `463e3da8` (makepad `cd812acd`). Until [#67](https://github.com/OctoSense-org/OctoScript-OH/issues/67)
+is fixed, prepare this repository in its own workspace rather than beside an
+OctoScript-App-Design-Flow checkout.
+
 
 Build a HarmonyOS app with a web frontend and Rust for everything else.
 
@@ -33,6 +39,16 @@ const info = await octoscript.invoke('device.info')
 ```
 
 ## Start
+
+The `octoscript-oh` command is built from this repository. In an Octoscript-OH
+checkout, after `python3 tools/setup-native.py` has placed the sibling framework
+repositories (Cargo needs them to resolve the workspace):
+
+```sh
+cargo install --path tools/octoscript-oh-cli   # rust-toolchain.toml selects nightly
+```
+
+Then:
 
 ```sh
 octoscript-oh new my-app

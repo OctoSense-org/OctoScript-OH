@@ -17,6 +17,11 @@ OctoSense 外壳、App Hub 的 `card-host`、Mail 以及其他 OctoSense 应用�
 用 `python3 tools/setup-native.py --check --cargo-manifest Cargo.toml`
 检查本地依赖图。现有的各平台渲染后端仍然属于各自的应用；框架负责的是共享的 VM 和 UI 源码。
 
+**已知差异：** 目前锁文件（以及对应的 Cargo 版本）选定的是 Octoscript-Makepad `b1596d9c`，
+它不在该仓库的 `main` 上；其他 OctoSense 使用方都在 `463e3da8`（makepad `cd812acd`）。
+在 [#67](https://github.com/OctoSense-org/OctoScript-OH/issues/67) 修复之前，请把本仓库放在单独的工作区里准备，不要和
+OctoScript-App-Design-Flow 的 checkout 放在一起。
+
 
 做一个鸿蒙应用：前端用网页，其余全部交给 Rust。
 
@@ -30,6 +35,15 @@ const info = await octoscript.invoke('device.info')
 ```
 
 ## 上手
+
+`octoscript-oh` 命令由本仓库构建。在 Octoscript-OH 的 checkout 中，先运行
+`python3 tools/setup-native.py` 放好并列的框架仓库（Cargo 解析工作区时需要它们），然后：
+
+```sh
+cargo install --path tools/octoscript-oh-cli   # rust-toolchain.toml 会选用 nightly
+```
+
+接着：
 
 ```sh
 octoscript-oh new my-app
