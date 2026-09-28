@@ -18,7 +18,7 @@ OctoSense 外壳、App Hub 的 `card-host`、Mail 以及其他 OctoSense 应用�
 检查本地依赖图。现有的各平台渲染后端仍然属于各自的应用；框架负责的是共享的 VM 和 UI 源码。
 
 **运行时锁定（[#67](https://github.com/OctoSense-org/OctoScript-OH/issues/67) 已于 2026-09-26 修复）：** 锁文件和对应的 Cargo 版本现在选定
-Octoscript-Makepad `65d30a09`，它在该仓库的 `main` 上（makepad `975c5630`、Octoscript `68f6a9df`，
+Octoscript-Makepad `6351524b`，它在该仓库的 `main` 上（makepad `b0cbc9bc`、Octoscript `68f6a9df`，
 与其他 OctoSense 使用方的框架源码相同）。之前锁定的 `b1596d9c` 是 main 上 `f4acc6c`
 在历史重写之前的哈希，迁移没有丢失任何内容。
 
