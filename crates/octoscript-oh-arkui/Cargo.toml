@@ -14,7 +14,7 @@ crate-type = ["rlib"]
 
 [dependencies]
 # The Octoscript VM, via ymote/Octoscript rather than straight from makepad.
-octoscript-core = { git = "https://github.com/OctoSense-org/Octoscript.git", rev = "68f6a9df55692b5d8ef8873a12721e279a3f40d6" }
+octoscript-core = { git = "https://github.com/OctoSense-org/Octoscript.git", rev = "dbd48cfb799551c11e30970c393777d29644a605" }
 serde_json = "1.0.151"
 
 [build-dependencies]
