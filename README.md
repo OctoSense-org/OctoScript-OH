@@ -21,8 +21,8 @@ to check the local dependency graph. Existing platform rendering backends remain
 part of their applications; the framework controls the shared VM and UI sources.
 
 **Runtime lock (fixed [#67](https://github.com/OctoSense-org/OctoScript-OH/issues/67), 2026-09-26):** the lock and the matching
-Cargo revs now select Octoscript-Makepad `b0960902`, a commit on its `main`
-(makepad `a772b370`, Octoscript `2e37d9e6`: the same framework sources as the
+Cargo revs now select Octoscript-Makepad `6cf2d90a`, a commit on its `main`
+(makepad `d653bc44`, Octoscript `2e37d9e6`: the same framework sources as the
 other OctoSense consumers). The previous pin, `b1596d9c`, was the pre-history-rewrite
 hash of main's `f4acc6c`; nothing was lost in the move.
 
